@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Tiwari | Applied Research Scientist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            width: 50%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin: 10px 0;
+            color: #222;
+        }
+
+        header p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        footer {
+            text-align: right;
+            padding: 0px;
+            border-top: 0px solid #ddd;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #ccc;
+            background-image: url('https://media.licdn.com/dms/image/v2/D5603AQEPKPNfsBGI6A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719891480461?e=1730937600&v=beta&t=vV404p3Emvw_z8s79qZpjEo6nq5UOdGVOxiR-Qs1wQI');
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 0px 0;
+        }
+
+        .contact-info a {
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .contact-info i {
+            margin-right: 5px;
+            color: #888;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #444;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 2px;
+            text-align: left;
+        }
+
+        .skills, .frameworks, .mlops, .cloud {
+            margin-bottom: 0px;
+        }
+
+        .skills h3 {
+            font-size: 18px;
+            color: #444;
+            margin: 10px 0 5px;
+        }
+
+        .skills span {
+            background-color: #e0e0e0;
+            color: #333;
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin: 2px;
+            display: inline-block;
+        }
+
+        .skills p {
+            margin: 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .experience {
+            margin-bottom: 30px;
+        }
+
+        .job {
+            margin-bottom: 30px;
+        }
+
+        .company {
+            font-size: 20px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+        .company::before {
+            content: "\27A3";
+            color: #444;
+            font-size: 28px;
+            position: absolute;
+            left: -30px;
+            top: 0;
+            top: 55%; 
+            transform: translateY(-50%);
+        }
+
+        .job-title {
+            font-size: 16px;
+            color: #777;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .separator {
+            margin: 0 5px;
+            color: #777;
+        }
+
+        .dates {
+            font-size: 14px;
+            color: #777;
+            margin-left: 0px;
+        }
+
+        .experience h4 {
+            padding-left: 20px;
+            font-size: 18px;
+            color: #333;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .experience ul {
+            padding-left: 40px;
+            list-style-type: disc;
+            font-size: 14px;
+        }
+
+        .experience ul li {
+            margin-bottom: 2px;
+        }
+
+        .education {
+            margin-bottom: 30px;
+        }
+
+        .edu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .edu-info {
+            flex: 1;
+        }
+
+        .edu-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .edu-institution {
+            font-size: 14px;
+            color: #555;
+            margin: 0;
+        }
+
+        .edu-dates {
+            font-size: 14px;
+            color: #777;
+            margin: 0;
+            text-align: right;
+        }
+
+        .publications ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .publications li {
+            margin-bottom: 10px;
+        }
+
+        .publications a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .publications a:hover {
+            text-decoration: underline;
+        }
+
+        .projects {
+        display: block;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        }
+
+        .project-card {
+            background-color: #fff;
+            width: calc(45%); /* Adjusted for 2 cards per row */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            position: relative; /* For positioning the icon */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+            margin-right: 30px; /* Leave space for the icon */
+        }
+
+        .project-card .social-icon {
+            position: absolute;
+            top: 15px; /* Align with title */
+            right: 15px; /* Right corner */
+            font-size: 16px;
+            color: #007BFF;
+        }
+
+        .project-card p {
+            color: #555;
+            font-size: 14px;
+            margin-top: auto; /* Pushes the paragraph to the bottom */
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile-pic">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQEPKPNfsBGI6A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719891480461?e=1730937600&v=beta&t=vV404p3Emvw_z8s79qZpjEo6nq5UOdGVOxiR-Qs1wQI" alt="Profile Picture" style="width: 100%; height: 100%; border-radius: 50%;">
+        </div>
+        <h1>Aman Tiwari</h1>
+        <p><i>Applied Research Scientist</i></p>
+        <div class="contact-info">
+            <a href="mailto:work.amantiwari@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="tel:+918755359531"><i class="fas fa-phone"></i> +91-8755359531</a>
+            <a href="https://linkedin.com/in/amant555"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/amant555"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://scholar.google.com/citations?user=yp1T9P0AAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section class="experience">
+            <h2 class="section-title">Work Experience</h2>
+
+            <div class="job">
+                <p class="company">ServiceNow</p>
+                <p class="job-title">Applied Research Scientist  <span class="separator">|</span> <span class="dates">May 2024 – Present</span></p>
+                <p>At ServiceNow, I work on various NLP projects for multiple clients, focusing on data curation, training SLMs and LLMs, and evaluating their performance. I have developed in-house frameworks to enhance core functionalities.</p>
+                
+                <h4>Text-to-Anything Project</h4>
+                <ul>
+                    <li>Developed a high-precision synthetic data generation pipeline supporting multiple Text-to-X tasks, such as Text-to-Code, Text-to-Cypher (Neo4j), and Text-to-SQL.</li>
+                    <li>Trained various models and adaptors for LLMs to enhance performance across tasks.</li>
+                    <li>Achieved a notable improvement in task accuracy, with Text-to-Cypher accuracy rising from 20-30% to 65-70%, outperforming open-source models.</li>
+                </ul>
+                
+                <h4>Change Risk</h4>
+                <ul>
+                    <li>Created an ensemble model framework that integrates text and tabular data to evaluate risks in change management.</li>
+                    <li>Incorporated SHAP values and fine-tuned LLMs to enhance model explainability and stakeholder transparency.</li>
+                </ul>
+
+                <h4>Embeddings Adapter Project</h4>
+                <ul>
+                    <li>Designed a framework for synthetic data generation to produce search queries for various corpora, boosting model performance.</li>
+                    <li>Trained adaptors on top of embedding models like BERT and E5 for improved search retrieval and classification.</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <p class="company">Thoughtworks</p>
+                <p class="job-title">Senior Data Scientist  <span class="separator">|</span> <span class="dates">September 2020 – May 2024</span></p>
+                <p>At Thoughtworks, I led the development of AI and NLP solutions, focusing on domain-specific models and revenue forecasting, which significantly enhanced client outcomes.</p>
+                
+                <h4>Aalap - Indian Legal LLM</h4>
+                <ul>
+                    <li>Directed the creation of a domain-specific Indian legal LLM by assembling an SFT dataset and fine-tuning an 8-billion-parameter Mistral model for specialized legal tasks.</li>
+                </ul>
+
+                <h4>Jugalbandi Project - Conversational AI</h4>
+                <ul>
+                    <li>Developed a Post-RAG architecture for generative AI solutions capable of speech interaction.</li>
+                    <li>Implemented advanced Gen-AI chatbots, including Jugalbandi Bot, which is in the POC stage for potential deployment by NGOs and government bodies.</li>
+                </ul>
+
+                <h4>Revenue Forecasting Initiative</h4>
+                <ul>
+                    <li>Designed proprietary forecasting models tailored for regional revenue predictions, achieving a 25% improvement in accuracy over existing models.</li>
+                </ul>
+
+                <h4>Indian Legal NLP Research</h4>
+                <ul>
+                    <li>Developed "opennyai," an open-source library for integrating proprietary legal NLP models.</li>
+                    <li>Led the creation of initial NLP models for the Indian legal domain, including NER, rhetorical roles, and summarization.</li>
+                    <li>Formulated and executed strategies for data collection to support legal NLP model development.</li>
+                </ul>
+
+                <h4>Open-source Speech Models</h4>
+                <ul>
+                    <li>Built advanced speech recognition and TTS models for 15+ Indian languages, achieving a WER of less than 10% and high MOS scores.</li>
+                    <li>Designed data collection methods, including speaker clustering and language identification systems.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <h2 class="section-title">Skills</h2>
+            
+            <div class="skills">
+                <h3>Programming</h3>
+                <p><span>Python</span></p>
+            </div>
+
+            <div class="skills">
+                <h3>Machine Learning</h3>
+                <p><span>Supervised & Unsupervised Learning</span> <span>Deep Learning</span> <span>Transfer Learning</span> <span>Ensemble Methods</span> <span>Gradient Boosting (XGBoost, LightGBM, CatBoost)</span> <span>Neural Networks</span></p>
+            </div>
+
+            <div class="skills">
+                <h3>Deep Learning</h3>
+                <p><span>CNNs</span> <span>RNNs</span> <span>LSTMs</span> <span>Transformer Models (BERT, GPT)</span> <span>Attention Mechanisms</span></p>
+            </div>
+
+            <div class="skills">
+                <h3>Natural Language Processing</h3>
+                <p><span>LLM’s finetuning and alignment</span> <span>Text Classification</span> <span>NER</span> <span>Machine Translation</span> <span>Sequence-to-Sequence Models</span> <span>Word Embeddings</span> <span>Speech Recognition</span></p>
+            </div>
+
+            <div class="skills">
+                <h3>Data Science</h3>
+                <p><span>Data Cleaning</span> <span>Feature Engineering</span> <span>Data Visualization</span> <span>Predictive Modelling</span> <span>Statistical Modelling</span> <span>Time Series Analysis</span> <span>A/B Testing</span></p>
+            </div>
+
+            <div class="skills">
+                <h3>Frameworks & Libraries</h3>
+                <p><span>TensorFlow</span> <span>PyTorch</span> <span>Keras</span> <span>Scikit-learn</span> <span>Pandas</span> <span>NumPy</span> <span>SciPy</span> <span>Hugging Face</span> <span>OpenCV</span> <span>NLTK</span> <span>SpaCy</span></p>
+            </div>
+
+            <div class="skills">
+                <h3>MLOps & Deployment</h3>
+                <p><span>Docker</span> <span>Kafka</span> <span>CI/CD</span> <span>ONNX</span> <span>Fast API</span> <span>MLflow</span> <span>Model Monitoring</span></p>
+            </div>
+
+            <div class="skills">
+                <h3>Cloud Platforms</h3>
+                <p><span>AWS</span> <span>GCP</span> <span>Azure</span></p>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2 class="section-title">Education</h2>
+            <div class="edu">
+                <div class="edu-info">
+                    <p class="edu-title">Master of Science – Data Science</p>
+                    <p class="edu-institution">University of Arizona</p>
+                </div>
+                <p class="edu-dates">2022 - 2024</p>
+            </div>
+            <div class="edu">
+                <div class="edu-info">
+                    <p class="edu-title">Bachelor of Technology – Computer Science</p>
+                    <p class="edu-institution">DIT University</p>
+                </div>
+                <p class="edu-dates">2016 - 2020</p>
+            </div>
+        </section>
+
+        <section class="publications">
+            <h2 class="section-title">Publications / Papers</h2>
+            <ul>
+                <li><a href="https://arxiv.org/abs/2402.01758" target="_blank">Aalap: AI Assistant for Legal & Paralegal Functions in India</a> - Arxiv, 2024</li>
+                <li><a href="https://aclanthology.org/2023.semeval-1.318.pdf" target="_blank">SemEval-2023 Task 6: LegalEval - Understanding Legal Texts</a> - SemEval, 2023</li>
+                <li><a href="https://aclanthology.org/2022.nllp-1.15.pdf" target="_blank">Named Entity Recognition in Indian court judgments</a> - NLLP, 2022</li>
+                <li><a href="https://aclanthology.org/2022.lrec-1.470.pdf" target="_blank">Corpus for Automatic Structuring of Legal Documents</a> - LREC, 2022</li>
+            </ul>
+        </section>
+        <div class="contact-info">
+        <p><i>Note: The above list includes some of my key publications. For a complete list, please visit my <a href="https://scholar.google.com/citations?user=yp1T9P0AAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a> profile.</i></p>
+        </div>
+
+        <section class="projects">
+    <h2 class="section-title">Important Open-Source Projects</h2>
+    
+    <div class="project-card">
+        <a href="https://github.com/OpenNyAI/Opennyai" class="social-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <h3>Opennyai</h3>
+        <p>This project creates a streamlined NLP pipeline for Indian legal documents, featuring Named Entity Recognition (NER), rhetorical role identification, and summarization. The pipeline is carefully designed and trained, with rigorous data curation and annotation, and evaluated using robust metrics.</p>
+    </div>
+
+    <div class="project-card">
+        <a href="https://www.jugalbandi.ai/mission" class="social-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <h3>Jugalbandi</h3>
+        <p>Jugalbandi is a free and open platform that combines the power of Large Language Models such as ChatGPT and Indian language translation models such as those under the Government of India's Bhashini mission to power conversational AI solutions in any domain.</p>
+    </div>
+
+    <div class="project-card">
+        <a href="https://huggingface.co/opennyaiorg/Aalap-Mistral-7B-v0.1-bf16" class="social-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <h3>Aalap: A 32K context length Indian legal LLM</h3>
+        <p>Aalap (Assistant for Legal and Paralegal functions in India) is an instructions fine-tuned version of Mistral 7B that can perform specific legal tasks in the Indian context. This research model intends to show that we can develop tasks for the legal domain and teach LLMs to do them at an affordable cost.</p>
+    </div>
+
+    <!-- <div class="project-card">
+        <a href="https://github.com/" class="social-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <h3>Project Title 4</h3>
+        <p>Placeholder description for project 4. Replace with actual project details.</p>
+    </div> -->
+</section>
+
+    </div>
+<footer>
+    <p class="last-updated">Last updated: September 5, 2024</p>
+</footer>
+</body>
+</html>
